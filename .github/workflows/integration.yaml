@@ -61,7 +61,7 @@ jobs:
         with:
           route: 'POST /repos/${{ github.repository }}/statuses/${{ needs.pr-info.outputs.sha }}'
           context: ${{ env.STATUS_NAME }}
-          state: preparing
+          state: pending
           target_url: 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -81,7 +81,7 @@ jobs:
         with:
           route: 'POST /repos/${{ github.repository }}/statuses/${{ needs.pr-info.outputs.sha }}'
           context: ${{ env.STATUS_NAME }}
-          state: preparing
+          state: pending
           target_url: 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -101,7 +101,7 @@ jobs:
         with:
           route: 'POST /repos/${{ github.repository }}/statuses/${{ needs.pr-info.outputs.sha }}'
           context: ${{ env.STATUS_NAME }}
-          state: preparing
+          state: pending
           target_url: 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -121,7 +121,7 @@ jobs:
         with:
           route: 'POST /repos/${{ github.repository }}/statuses/${{ needs.pr-info.outputs.sha }}'
           context: ${{ env.STATUS_NAME }}
-          state: preparing
+          state: pending
           target_url: 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -185,16 +185,6 @@ jobs:
       STATUS_NAME: edge-simplified-9.2
 
     steps:
-      - name: Create in-progress status
-        uses: octokit/request-action@v2.x
-        with:
-          route: 'POST /repos/${{ github.repository }}/statuses/${{ needs.pr-info.outputs.sha }}'
-          context: ${{ env.STATUS_NAME }}
-          state: pending
-          target_url: 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       # Install git before use actions/checkout@3 to checkout .git folder
       - name: Install required packages
         run: sudo dnf install -y httpd git make systemd krb5-devel python3-docutils gpgme-devel libassuan-devel systemd-rpm-macros rpmdevtools golang go-rpm-macros python3-devel selinux-policy-devel createrepo_c rust-toolset openssl-devel xz-devel libzstd-devel gnupg2
@@ -266,16 +256,6 @@ jobs:
       STATUS_NAME: edge-simplified-cs9
 
     steps:
-      - name: Create in-progress status
-        uses: octokit/request-action@v2.x
-        with:
-          route: 'POST /repos/${{ github.repository }}/statuses/${{ needs.pr-info.outputs.sha }}'
-          context: ${{ env.STATUS_NAME }}
-          state: pending
-          target_url: 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       # Install git before use actions/checkout@3 to checkout .git folder
       - name: Install required packages
         run: sudo dnf install -y git make systemd krb5-devel python3-docutils gpgme-devel libassuan-devel systemd-rpm-macros rpmdevtools golang go-rpm-macros python3-devel selinux-policy-devel createrepo_c rust-toolset openssl-devel xz-devel libzstd-devel gnupg2
@@ -347,16 +327,6 @@ jobs:
       STATUS_NAME: edge-simplified-8.8
 
     steps:
-      - name: Create in-progress status
-        uses: octokit/request-action@v2.x
-        with:
-          route: 'POST /repos/${{ github.repository }}/statuses/${{ needs.pr-info.outputs.sha }}'
-          context: ${{ env.STATUS_NAME }}
-          state: pending
-          target_url: 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       # Install git before use actions/checkout@3 to checkout .git folder
       - name: Install required packages
         run: sudo dnf install -y git make systemd krb5-devel python3-docutils gpgme-devel libassuan-devel systemd-rpm-macros rpmdevtools golang go-compilers-golang-compiler python3-devel selinux-policy-devel createrepo_c rust-toolset openssl-devel xz-devel libzstd-devel gnupg2
@@ -428,16 +398,6 @@ jobs:
       STATUS_NAME: edge-simplified-cs8
 
     steps:
-      - name: Create in-progress status
-        uses: octokit/request-action@v2.x
-        with:
-          route: 'POST /repos/${{ github.repository }}/statuses/${{ needs.pr-info.outputs.sha }}'
-          context: ${{ env.STATUS_NAME }}
-          state: pending
-          target_url: 'https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       # Install git before use actions/checkout@3 to checkout .git folder
       - name: Install required packages
         run: sudo dnf install -y git make systemd krb5-devel python3-docutils gpgme-devel libassuan-devel systemd-rpm-macros rpmdevtools golang go-compilers-golang-compiler python3-devel selinux-policy-devel createrepo_c rust-toolset openssl-devel xz-devel libzstd-devel gnupg2
